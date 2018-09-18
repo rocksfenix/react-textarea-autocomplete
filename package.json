@@ -1,0 +1,51 @@
+{
+  "name": "react-textarea-autocomplete",
+  "version": "0.0.1",
+  "description": "Simple React Textarea component for autocomplete tags, hashtags, etc.",
+  "main": "./lib/Textarea.js",
+  "scripts": {
+    "dev": "webpack -w",
+    "build": "webpack",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "texatea",
+    "autocomplete"
+  ],
+  "author": "Gerardo Gallegos <puxerop@gmail.com>",
+  "repository": "git@github.com:GerardoGallegos/react-textarea-autocomplete.git",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-styled-components": "^1.7.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "enzyme-to-json": "^3.3.4",
+    "expect": "^23.6.0",
+    "jest": "^23.6.0",
+    "react-test-renderer": "^16.5.1",
+    "standard": "^12.0.1",
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "dependencies": {
+    "textarea-caret": "^3.1.0"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  }
+}
