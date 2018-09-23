@@ -1,0 +1,29 @@
+{
+  "name": "examples-rta-page",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-live": "^1.11.0",
+    "react-scripts": "1.1.5",
+    "styled-components": "^3.4.9"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d examples/build",
+    "publish-demo": "npm run build && npm run deploy"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GerardoGallegos/react-textarea-autocomplete-page.git"
+  },
+  "homepage": "https://gerardogallegos.github.io/react-textarea-autocomplete-page",
+  "devDependencies": {
+    "gh-pages": "^2.0.0"
+  }
+}
