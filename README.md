@@ -47,11 +47,12 @@ char               | String    | #          | Character of search, example # |
 maxSuggest         | Number    | [ ]        | Max lenght of items in suggest |
 mode               | String    | infinite   | Behavior in key navegations infinite || lock |
 addChar            | Boolean   | true       | Adds the character in textarea when is selected |
+limitToParent      | Boolean   | false      | Restrict ul list position in the parent's width |
 showCharInList     | Boolean   | true       | Adds the character in the select list |
 spellcheck         | Boolean   | false      | Spellcheck in textarea |
-listClass          | String    | ""         | Class css in the ul list |
-activeItemClass    | String    | ""         | Class css in the li item active |
-inactiveItemClass  | String    | ""         | Class css in the li item inactive |
+listClass          | String    | ""         | Custom class css in the ul list |
+activeItemClass    | String    | ""         | Custom class css in the li item active |
+inactiveItemClass  | String    | ""         | Custom class css in the li item inactive |
 activeItemStyle    | Object    | { }        | Styles in active item |
 inactiveItemStyle  | Object    | { }        | Styles in inactive item |
 charStyle          | Object    | { }        | Char styles in the item |

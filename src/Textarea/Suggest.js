@@ -56,10 +56,34 @@ class Suggest extends Component {
     showCharInList: bool
   }
 
+  state = {
+    left: 0
+  }
+
+  panel = React.createRef()
+
+  componentDidUpdate () {
+    if (this.props.isOpen) {
+      // Restrict ul list position in the parent's width
+      const { current } = this.panel
+      const width = parseFloat(current.clientWidth)
+      const parentWidth = this.props.parent.offsetWidth
+      let left = this.props.left - (width / 2)
+      if (this.props.limitToParent) {
+        // It's fixed left position
+        if (left < 0) left = 0
+        if (left + width > parentWidth) left = parentWidth - width
+      }
+      if (left !== this.state.left) {
+        this.setState({ left })
+      }
+    }
+  }
+
   render () {
     const {
       suggests,
-      left,
+      // left,
       activeIndex,
       char,
       showCharInList,
@@ -73,7 +97,7 @@ class Suggest extends Component {
     } = this.props
 
     const suggestStyles = {
-      left: left - 75,
+      left: this.state.left,
       top: `-${suggests.length * 36}px`,
       transform: isOpen ? 'scale(1)' : 'scale(0.9)',
       opacity: isOpen ? '1' : '0',
@@ -106,6 +130,7 @@ class Suggest extends Component {
       <ul
         style={endListStyles}
         className={listClass}
+        ref={this.panel}
       >
         {suggests.map((suggest, index) => (
           <li

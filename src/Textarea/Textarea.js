@@ -42,6 +42,9 @@ class TextareaComponent extends Component {
     // Adds the character when is selected
     addChar: types.bool,
 
+    // Restrict ul list position in the parent's width
+    limitToParent: types.bool,
+
     // Adds the character in the select list
     showCharInList: types.bool,
 
@@ -80,7 +83,8 @@ class TextareaComponent extends Component {
     addChar: true,
     showCharInList: true,
     acceptSpaces: false,
-    spellcheck: false
+    spellcheck: false,
+    limitToParent: false
   }
 
   state = {
@@ -236,6 +240,7 @@ class TextareaComponent extends Component {
           activeIndex={activeIndex}
           char={char}
           showCharInList={showCharInList}
+          parent={this.textarea.current}
           {...this.props}
         />
         <textarea
