@@ -7,7 +7,7 @@ const styles = {
     minWidth: '150px',
     minHeight: '34px',
     background: '#FFF',
-    boxShadow: '1px 3px 28px rgba(0,0,0,0.2)',
+    boxShadow: '1px 3px 28px rgba(0,0,0,0.4)',
     animation: '200ms ease-out',
     willChange: 'transform, opacity',
     borderRadius: '5px',
@@ -19,14 +19,18 @@ const styles = {
     background: '#FFF',
     color: '#222',
     listStyle: 'none',
-    padding: '.5em 0'
+    padding: '.5em .5em'
   },
 
   itemActive: {
     background: '#3f51b5',
     color: '#FFF',
     listStyle: 'none',
-    padding: '.5em 0'
+    padding: '.5em .5em'
+  },
+
+  char: {
+    marginRight: '.2em'
   }
 }
 
@@ -53,39 +57,67 @@ class Suggest extends Component {
   }
 
   render () {
-    const { suggests, left, activeIndex, char, showCharInList, isOpen, classList, classItem, styleItemInactive, styleItemActive } = this.props
+    const {
+      suggests,
+      left,
+      activeIndex,
+      char,
+      showCharInList,
+      isOpen,
+      listClass,
+      inactiveItemStyle,
+      activeItemStyle,
+      activeItemClass,
+      inactiveItemClass,
+      charStyle
+    } = this.props
+
     const suggestStyles = {
       left: left - 75,
       top: `-${suggests.length * 36}px`,
       transform: isOpen ? 'scale(1)' : 'scale(0.9)',
       opacity: isOpen ? '1' : '0',
-      transition: 'opacity 200ms ease-out, transform 200ms ease-out'
+      transition: 'opacity 200ms ease-out, transform 200ms ease-out',
+      zIndex: isOpen ? '1000' : '-1'
     }
 
     const endListStyles = {
       ...styles.panel,
       ...suggestStyles,
-      ...classList
+      ...listClass
     }
 
     const itemStyleInactive = {
       ...styles.item,
-      ...styleItemInactive
+      ...inactiveItemStyle
     }
 
     const itemStyleActive = {
       ...styles.itemActive,
-      ...styleItemActive
+      ...activeItemStyle
+    }
+
+    const charStyles = {
+      ...styles.char,
+      ...charStyle
     }
 
     return (
       <ul
         style={endListStyles}
-        className={classList}
+        className={listClass}
       >
         {suggests.map((suggest, index) => (
-          <li key={suggest} style={index === activeIndex ? itemStyleActive : itemStyleInactive} className={classItem}>
-            { showCharInList ? char : '' }
+          <li
+            key={suggest}
+            style={index === activeIndex ? itemStyleActive : itemStyleInactive}
+            className={index === activeIndex ? activeItemClass : inactiveItemClass}
+          >
+            {
+              showCharInList
+                ? <span style={charStyles}>{char}</span>
+                : ''
+            }
             { suggest }
           </li>
         ))}

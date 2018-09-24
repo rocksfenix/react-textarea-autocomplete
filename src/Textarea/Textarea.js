@@ -30,7 +30,7 @@ class TextareaComponent extends Component {
     // Character of search, example #
     char: types.string,
 
-    // Max lenght of suggest
+    // Max lenght of items in suggest
     maxSuggest: types.number,
 
     // Make valid for Server Side Rendering
@@ -48,17 +48,26 @@ class TextareaComponent extends Component {
     // Accept spaces after, example #seveal words
     acceptSpaces: types.bool,
 
-    // Pass a className in ul list
-    classList: types.object,
+    // spellcheck
+    spellcheck: types.bool,
 
-    // Pass a className in li item
-    classItem: types.object,
+    // Class css in the ul list
+    listClass: types.object,
+
+    // Pass a className in the li item
+    // active or inactive
+    activeItemClass: types.object,
+
+    inactiveItemClass: types.object,
 
     // Styles in inactive item
-    styleItemInactive: types.object,
+    inactiveItemStyle: types.object,
 
     // Styles in active item
-    styleItemActive: types.object
+    activeItemStyle: types.object,
+
+    // Character styles
+    charStyle: types.object
   }
 
   static defaultProps = {
@@ -70,7 +79,8 @@ class TextareaComponent extends Component {
     mode: 'infinite',
     addChar: true,
     showCharInList: true,
-    acceptSpaces: false
+    acceptSpaces: false,
+    spellcheck: false
   }
 
   state = {
@@ -180,7 +190,6 @@ class TextareaComponent extends Component {
   }
 
   onKeyDown = (e) => {
-    console.log('KEY DOWN')
     if (this.state.isOpen) {
       if (e.keyCode === 38 || e.keyCode === 40 || e.keyCode === 13) {
         e.preventDefault()
@@ -216,6 +225,7 @@ class TextareaComponent extends Component {
 
   render () {
     const { top, left, value, match, suggests, isOpen, activeIndex } = this.state
+    const { char, showCharInList, spellcheck } = this.props
     return (
       <div style={styles.panel}>
         <Suggest
@@ -224,8 +234,8 @@ class TextareaComponent extends Component {
           suggests={suggests}
           isOpen={match && isOpen}
           activeIndex={activeIndex}
-          char={this.props.char}
-          showCharInList={this.props.showCharInList}
+          char={char}
+          showCharInList={showCharInList}
           {...this.props}
         />
         <textarea
@@ -234,6 +244,7 @@ class TextareaComponent extends Component {
           onKeyDown={this.onKeyDown}
           value={value}
           style={styles.textarea}
+          spellCheck={spellcheck}
         />
       </div>
     )

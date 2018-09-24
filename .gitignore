@@ -4,5 +4,4 @@ node_modules
 # Generated files
 lib
 
-# Examples page
-examples
+package-lock.json
