@@ -1,13 +1,12 @@
 {
   "name": "react-textarea-autocomplete",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simple React Textarea component for autocomplete tags, hashtags, etc.",
-  "main": "./lib/Textarea.js",
+  "main": "lib/index.js",
   "scripts": {
-    "dev": "webpack -w",
-    "build": "webpack",
-    "test": "jest",
-    "prepare": "npm run build"
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production --optimize-minimize",
+    "test": "jest"
   },
   "keywords": [
     "react",
@@ -15,37 +14,47 @@
     "autocomplete"
   ],
   "author": "Gerardo Gallegos <puxerop@gmail.com>",
-  "repository": "git@github.com:GerardoGallegos/react-textarea-autocomplete.git",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^9.0.0",
-    "babel-jest": "^23.6.0",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-styled-components": "^1.7.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "enzyme": "^3.6.0",
-    "enzyme-adapter-react-16": "^1.5.0",
-    "enzyme-to-json": "^3.3.4",
-    "expect": "^23.6.0",
-    "jest": "^23.6.0",
-    "react-test-renderer": "^16.5.1",
-    "standard": "^12.0.1",
-    "webpack": "^4.19.0",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.8"
-  },
-  "dependencies": {
-    "textarea-caret": "^3.1.0"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/preset-react": "^7.8.3",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^25.1.0",
+    "babel-loader": "^8.0.6",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "expect": "^25.1.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^25.1.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "standard": "^14.3.1",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   },
   "peerDependencies": {
-    "prop-types": "^15.6.2",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react": "^16.4.0",
+    "prop-types": "^15.7.2"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "textarea-caret": "^3.1.0"
   },
   "standard": {
     "parser": "babel-eslint"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rocksfenix/react-textarea-autocomplete"
+  },
+  "bugs": {
+    "url": "https://github.com/rocksfenix/react-textarea-autocomplete/issues"
+  },
+  "homepage": "https://react-textarea-autocomplete.surge.sh/"
 }

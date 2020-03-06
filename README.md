@@ -5,7 +5,7 @@ Simple React Textarea component for autocomplete hashtags, tags etc.
 ## Installation
 ```npm install react-textarea-autocomplete```
 
-## [DEMO](https://gerardogallegos.github.io/react-textarea-autocomplete-page/)
+[Demo](https://react-textarea-autocomplete.surge.sh/)
 
 ## Usage
 ```javascript

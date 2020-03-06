@@ -1,7 +1,27 @@
-# Dependency directory
 node_modules
+demo-page/node_modules
 
-# Generated files
+NOTES.md
+
+# build files
 lib
 
-package-lock.json
+demo-page/.pnp
+demo-page/.pnp.js
+
+# testing
+demo-page/coverage
+
+# production
+demo-page/build
+
+# misc
+demo-page/.DS_Store
+demo-page/.env.local
+demo-page/.env.development.local
+demo-page/.env.test.local
+demo-page/.env.production.local
+
+demo-page/npm-debug.log*
+demo-page/yarn-debug.log*
+demo-page/yarn-error.log*
