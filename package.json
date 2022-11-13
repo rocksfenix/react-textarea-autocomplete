@@ -27,7 +27,7 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "expect": "^25.1.0",
     "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "jest": "^25.1.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
